@@ -3,7 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dnipro - Informação</title>
+    <title>Dnipro - Informações</title>
+    <style>
+      /* Estilos para a tabela */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        font-family: Arial, sans-serif;
+      }
+
+      th,
+      td {
+        border: 1px solid #cbd5e1;
+        padding: 10px 14px;
+        text-align: left;
+      }
+
+      /* Estilização dos elementos th com cor própria */
+      th {
+        background-color: #1a365d;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      /* Estilização dos elementos td com cor de texto diferente */
+      td {
+        color: #2d3748;
+        background-color: #f8fafc;
+      }
+
+      /* Destaque para células específicas da tabela */
+      .rotulo {
+        color: #2b6cb0;
+        font-weight: bold;
+      }
+
+      /* Estilos para a lista de curiosidades */
+      .curiosidades {
+        background-color: #edf2f7;
+        padding: 20px 25px 20px 40px;
+        border-radius: 10px;
+        max-width: 650px;
+      }
+
+      .curiosidades li {
+        margin-bottom: 10px;
+        color: #2d3748;
+        line-height: 1.5;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -11,17 +62,90 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
+        <a href="multimedia.html">Multimedia</a>
         <a href="info.html">Informação</a>
       </nav>
     </header>
 
     <main>
-      <h2>Informação</h2>
+      <!-- 1. Título h2 e 2. Frase introdutória -->
+      <h2>Informações</h2>
       <p>
-        Dnipro é um dos maiores centros industriais, aeroespaciais e culturais
-        da Ucrânia.
+        Consulte os principais dados geográficos e demográficos da cidade de
+        Dnipro, assim como algumas das suas curiosidades mais marcantes.
       </p>
+
+      <!-- 3. e 4. Tabela com rowspan, colspan, th e td estilizados -->
+      <section>
+        <h3>Dados Estatísticos e Geográficos</h3>
+        <table>
+          <tbody>
+            <tr>
+              <th rowspan="2">Demografia</th>
+              <td class="rotulo">População</td>
+              <td>~980.000 habitantes</td>
+            </tr>
+            <tr>
+              <td class="rotulo">Densidade populacional</td>
+              <td>2.400 hab/km²</td>
+            </tr>
+            <tr>
+              <th rowspan="3">Geografia</th>
+              <td class="rotulo">Área</td>
+              <td>405 km²</td>
+            </tr>
+            <tr>
+              <td class="rotulo">Região</td>
+              <td>Oblast de Dnipropetrovsk</td>
+            </tr>
+            <tr>
+              <td class="rotulo">País</td>
+              <td>Ucrânia</td>
+            </tr>
+            <tr>
+              <th>Website</th>
+              <td colspan="2">
+                <a href="https://dniprorada.gov.ua" target="_blank">
+                  dniprorada.gov.ua
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 5. e 6. Lista com 5 curiosidades sobre Dnipro -->
+      <section>
+        <h3>Curiosidades sobre Dnipro</h3>
+        <ol class="curiosidades">
+          <li>
+            <strong>A marginal ribeirinha mais longa da Europa:</strong> A
+            avenida marginal ao longo do rio Dniepre estende-se por cerca de 30
+            km, sendo um dos passeios pedonais mais extensos do continente
+            europeu.
+          </li>
+          <li>
+            <strong>Capital espacial da Ucrânia:</strong> Durante o século XX, a
+            cidade foi um dos polos mundiais da indústria espacial e militar
+            através do lendário complexo aeroespacial Yuzhmash.
+          </li>
+          <li>
+            <strong>Uma das redes de metro mais curtas do mundo:</strong> O
+            metropolitano de Dnipro possui apenas uma linha em operação com 6
+            estações ativas e cerca de 7,8 km de extensão.
+          </li>
+          <li>
+            <strong>O Centro Menorah:</strong> Dnipro alberga o complexo
+            Menorah, reconhecido como um dos maiores centros culturais e
+            comunitários judaicos do mundo.
+          </li>
+          <li>
+            <strong>Ponte Merefa-Kherson:</strong> É uma famosa ponte
+            ferroviária em arcos de betão armado sobre o Dniepre, considerada um
+            marco icónico da engenharia e da silhueta arquitetónica da cidade.
+          </li>
+        </ol>
+      </section>
     </main>
 
     <footer>
