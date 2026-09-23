@@ -13,6 +13,45 @@
         width: 150px;
         border-radius: 20px;
       }
+
+      /* Estilos para a secção da Poesia */
+      .poema {
+        background-color: #f7f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 500px;
+        font-family: Georgia, serif;
+      }
+
+      .poema p {
+        margin: 6px 0;
+        font-size: 1.05rem;
+      }
+
+      /* 1. Destaca o primeiro verso */
+      .poema p:nth-child(1) {
+        font-weight: bold;
+        font-size: 1.15rem;
+        color: #1a365d;
+      }
+
+      /* 2. Estiliza os versos ímpares */
+      .poema p:nth-child(odd) {
+        color: #2b4c7e;
+      }
+
+      /* 3. Estiliza os versos pares com avanço e itálico */
+      .poema p:nth-child(even) {
+        color: #4a5568;
+        font-style: italic;
+        padding-left: 20px;
+      }
+
+      /* 4. Linha de destaque para o último verso */
+      .poema p:nth-child(8) {
+        border-bottom: 2px solid #cbd5e0;
+        padding-bottom: 6px;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -92,6 +131,19 @@
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
+      </section>
+      <section>
+        <h3>Poesia</h3>
+        <div class="poema">
+          <p>Brama e geme o largo Dniepre,</p>
+          <p>Uiva o vento furioso e sem fim,</p>
+          <p>Dobra ao chão salgueiros altos,</p>
+          <p>Ergue em serras a vaga que ruge assim.</p>
+          <p>A lua pálida entre nuvens densas</p>
+          <p>Ora assoma, ora volta a esconder,</p>
+          <p>Qual pequeno barco em mar revolto</p>
+          <p>Que entre as ondas parece desfalecer.</p>
+        </div>
       </section>
     </main>
 
