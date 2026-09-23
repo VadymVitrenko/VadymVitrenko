@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="pt">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dnipro - Multimédia</title>
     <style>
+      /* Galeria de Fotografias (Flexbox) */
       .fotografias {
         display: flex;
         flex-direction: row;
@@ -14,13 +18,14 @@
         border-radius: 20px;
       }
 
-      /* Estilos para a secção da Poesia */
+      /* Secção de Poesia */
       .poema {
         background-color: #f7f9fa;
         padding: 20px;
         border-radius: 12px;
         max-width: 500px;
         font-family: Georgia, serif;
+        margin-top: 15px;
       }
 
       .poema p {
@@ -28,34 +33,28 @@
         font-size: 1.05rem;
       }
 
-      /* 1. Destaca o primeiro verso */
+      /* Seletores :nth-child */
       .poema p:nth-child(1) {
         font-weight: bold;
         font-size: 1.15rem;
         color: #1a365d;
       }
 
-      /* 2. Estiliza os versos ímpares */
       .poema p:nth-child(odd) {
         color: #2b4c7e;
       }
 
-      /* 3. Estiliza os versos pares com avanço e itálico */
       .poema p:nth-child(even) {
         color: #4a5568;
         font-style: italic;
         padding-left: 20px;
       }
 
-      /* 4. Linha de destaque para o último verso */
       .poema p:nth-child(8) {
         border-bottom: 2px solid #cbd5e0;
         padding-bottom: 6px;
       }
     </style>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cidade</title>
   </head>
   <body>
     <header>
@@ -67,6 +66,7 @@
         <a href="info.html">Informação</a>
       </nav>
     </header>
+
     <main>
       <h2>Multimedia</h2>
       <p>
@@ -74,6 +74,8 @@
         Ucrânia. É conhecida pela sua bela arquitetura, parques majestosos e um
         forte espírito indomável!
       </p>
+
+      <!-- 1. Galeria de Fotografias -->
       <section>
         <h3>Fotografias</h3>
         <div class="fotografias">
@@ -111,12 +113,14 @@
           />
         </div>
       </section>
+
+      <!-- 2. Secção de Vídeo -->
       <section>
-        <h3>Video</h3>
+        <h3>Vídeo</h3>
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/1NhWpTghYYE?si=_MIy2yhQOut3gzdV"
+          src="https://www.youtube.com/embed/1NhWpTghYYE"
           title="YouTube video player"
           frameborder="0"
           allow="
@@ -132,6 +136,8 @@
           allowfullscreen
         ></iframe>
       </section>
+
+      <!-- 3. Secção de Poesia -->
       <section>
         <h3>Poesia</h3>
         <div class="poema">
