@@ -8,7 +8,6 @@
   </head>
   <body>
     <header>
-      <!-- O menu igual às outras páginas -->
       <nav class="menu-cidades">
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
@@ -30,10 +29,9 @@
         </div>
       </section>
 
-      <!-- Secção 2: Fotografias (com o Efeito transition obrigatório) -->
+      <!-- Secção 2: Fotografias (com o Efeito transition) -->
       <section class="multi-fotos">
         <h2>Fotografias</h2>
-        <p>Passa o rato na imagem para ver o efeito pedido:</p>
         <br />
         <img
           src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -42,10 +40,27 @@
         />
       </section>
 
-      <!-- Secção 3: Vídeo -->
-      <section class="multi-video">
-        <h2>Vídeo e Poesia</h2>
-        <p>Secção com cor diferente a ocupar o ecrã todo, como pedido.</p>
+      <!-- SECÇÃO NOVA: Vídeo Background -->
+      <section class="video-bg-section">
+        <!-- Vídeo aleatório do Pixabay -->
+        <video autoplay loop muted playsinline class="video-bg">
+          <source
+            src="https://cdn.pixabay.com/video/2020/05/25/40144-424855424_tiny.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="video-content">
+          <h2>Relaxamento Visual</h2>
+          <p>Vídeo em background a funcionar.</p>
+        </div>
+      </section>
+
+      <!-- SECÇÃO NOVA: Efeito Parallax -->
+      <section class="parallax-section">
+        <div class="parallax-content">
+          <h2>Efeito Parallax</h2>
+          <p>Faz scroll para cima e para baixo para veres o efeito.</p>
+        </div>
       </section>
     </main>
   </body>
