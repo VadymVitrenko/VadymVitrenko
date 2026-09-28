@@ -1,63 +1,130 @@
-/* 1. Cor de fundo geral e tipografia base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  background-color: #eef2f5;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333333;
+    font-family: sans-serif;
+    scroll-behavior: smooth; /* Faz o deslize suave quando clicas no menu */
 }
 
-/* 2. Título principal */
-h1 {
-  text-align: center;
-  color: #1a365d;
-  margin: 20px 0 10px 0;
+/* Regra obrigatória: Altura de 100vh para cada secção */
+section {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 3. Navegação com fundo verde */
-nav {
-  background-color: #2e7d32;
-  text-align: center;
-  padding: 12px;
+/* ----------------------------------
+   1. HERO IMAGE
+-----------------------------------*/
+.hero {
+    /* Imagem aleatória de tecnologia que cumpre o requisito */
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* OBRIGATÓRIO: Para prender o texto motivacional */
 }
 
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 15px;
+/* Menu da Hero Image (Remover bullets e sublinhados) */
+.menu-hero {
+    list-style: none; /* Tira as pintas da lista */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.menu-hero a {
+    color: white;
+    text-decoration: none; /* Tira os sublinhados dos links */
+    font-weight: bold;
 }
 
-/* 4. Imagem do cabeçalho */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Posicionar o texto motivacional (Regra de Position) */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
 }
 
-/* 5. Área principal (Main) com fundo branco e espaçamentos */
-main {
-  background-color: #ffffff;
-  max-width: 900px;
-  margin: 20px auto;   /* Margem externa: afasta da imagem, do footer e centra na página */
-  padding: 25px;       /* Espaçamento interno: resguarda o texto das bordas */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+/* Botão Call-to-action */
+.cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4757;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-/* 6. Rodapé com fundo preto */
-footer {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+/* ----------------------------------
+   2. PROJETOS (Cores diferentes e Flexbox)
+-----------------------------------*/
+.bg-projetos {
+    background-color: #2f3542;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }
 
-footer p {
-  margin: 0;
+.flex-cards {
+    display: flex; /* OBRIGATÓRIO: Layout Flex nos cartões */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #57606f;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.card a {
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ----------------------------------
+   3. DISCIPLINA (Com Media Query)
+-----------------------------------*/
+.bg-disciplina {
+    background-color: #f1f2f6;
+    color: #333;
+    justify-content: center;
+}
+
+.responsivo-diw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* OBRIGATÓRIO: Media query para a Secção 3 ficar um por baixo do outro no telemóvel */
+@media (max-width: 768px) {
+    .responsivo-diw {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .flex-cards {
+        flex-direction: column; /* Aproveita e empilha os cartões também */
+    }
 }
