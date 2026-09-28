@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: sans-serif;
     background-color: #f4f4f4;
@@ -22,6 +23,7 @@ body {
     background-color: #2c3e50;
     padding: 20px;
 }
+
 .menu-cidades a {
     color: white;
     text-decoration: none;
@@ -31,14 +33,17 @@ body {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
+
 .menu-cidades a:hover {
     background-color: #e74c3c;
 }
-@media (max-width: 600px) {
+
+@media (width <= 600px) {
     .menu-cidades {
         gap: 10px;
         padding: 10px;
     }
+
     .menu-cidades a {
         flex-grow: 1;
         text-align: center;
@@ -49,33 +54,108 @@ body {
 /* =========================================
    PÁGINA MULTIMÉDIA
 ========================================== */
-.multi-destaque { background-color: #2c3e50; height: 100vh; padding: 0; }
-.multi-fotos { background-color: #34495e; height: 100vh; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.multi-video { background-color: #27ae60; height: 100vh; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.multi-destaque {
+    background-color: #2c3e50;
+    height: 100vh;
+    padding: 0;
+}
 
-.imagem-container { position: relative; width: 100%; height: 100%; }
-.img-full { width: 100%; height: 100%; object-fit: cover; }
-.texto-emblematico { position: absolute; bottom: 20%; right: 10%; color: white; font-size: 5vw; background-color: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 10px; }
+.multi-fotos {
+    background-color: #34495e;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-.foto-efeito { width: 300px; border-radius: 10px; transition: transform 0.5s ease; }
-.foto-efeito:hover { transform: scale(1.1); }
+.multi-video {
+    background-color: #27ae60;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-emblematico {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    color: white;
+    font-size: 5vw;
+    background-color: rgb(0 0 0 / 60%);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.foto-efeito {
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.foto-efeito:hover {
+    transform: scale(1.1);
+}
 
 /* =========================================
    PÁGINA LOCALIZAÇÃO
 ========================================== */
-.container-localizacao { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 50px; background-color: #ecf0f1; min-height: 80vh; }
-.texto-localizacao { flex: 1; font-size: 1.2rem; line-height: 1.6; color: #333; }
-.mapa-iframe { flex: 1; width: 100%; height: 400px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-
-@media (max-width: 768px) {
-    .container-localizacao { flex-direction: column; padding: 20px; }
-    .mapa-iframe { height: 300px; }
+.container-localizacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px;
+    background-color: #ecf0f1;
+    min-height: 80vh;
 }
+
+.texto-localizacao {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.mapa-iframe {
+    flex: 1;
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
+
+@media (width <= 768px) {
+    .container-localizacao {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mapa-iframe {
+        height: 300px;
+    }
+}
+
 /* =========================================
    NOVOS EFEITOS: VÍDEO BG E PARALLAX
 ========================================== */
-
-/* Vídeo Background */
 .video-bg-section {
     position: relative;
     height: 100vh;
@@ -84,6 +164,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .video-bg {
     position: absolute;
     top: 50%;
@@ -95,21 +176,21 @@ body {
     transform: translateX(-50%) translateY(-50%);
     z-index: -1;
 }
+
 .video-content {
     position: relative;
     z-index: 1;
     color: white;
     text-align: center;
-    background: rgba(0,0,0,0.6);
+    background: rgb(0 0 0 / 60%);
     padding: 30px;
     border-radius: 10px;
 }
 
-/* Efeito Parallax - A magia do background-attachment: fixed */
 .parallax-section {
     height: 100vh;
     background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1354&q=80');
-    background-attachment: fixed; /* É ISTO QUE FAZ O EFEITO PARALLAX */
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,9 +198,10 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .parallax-content {
     color: white;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgb(0 0 0 / 70%);
     padding: 40px;
     font-size: 1.5rem;
     text-align: center;
