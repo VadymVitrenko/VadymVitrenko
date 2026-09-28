@@ -3,67 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O Meu Portefólio</title>
-    <!-- Liga ao CSS da raiz -->
-    <link rel="stylesheet" href="style.css" />
+    <title>Laboratórios de DIW</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 40px;
+        background-color: #f8f9fa;
+      }
+      h1 {
+        color: #333;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 15px;
+      }
+      a {
+        text-decoration: none;
+        color: #0056b3;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <!-- SECÇÃO 1: Hero Image -->
-    <section id="inicio" class="hero">
-      <nav>
-        <ul class="menu-hero">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#disciplina">Interfaces Web</a></li>
-        </ul>
-      </nav>
+    <h1>Os Meus Projetos</h1>
+    <p>Lista de laboratórios da disciplina:</p>
 
-      <div class="hero-text">
-        <h1>Sobrevivência Web</h1>
-        <p>O mínimo esforço para a máxima aprovação.</p>
-        <a href="#projetos" class="cta-btn">Ver Projetos</a>
-      </div>
-    </section>
-
-    <!-- SECÇÃO 2: Projetos (Organizados com Flexbox) -->
-    <section id="projetos" class="bg-projetos">
-      <h2>Os Meus Laboratórios</h2>
-      <div class="flex-cards">
-        <article class="card">
-          <h3>Lab 1</h3>
-          <a href="lab1/index.html">Abrir Projeto</a>
-        </article>
-        <article class="card">
-          <h3>Lab 2</h3>
-          <a href="lab2/index.html">Abrir Projeto</a>
-        </article>
-        <article class="card">
-          <h3>Lab 3</h3>
-          <a href="lab3/index.html">Abrir Projeto</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- SECÇÃO 3: Disciplina DIW -->
-    <section id="disciplina" class="bg-disciplina">
-      <div class="responsivo-diw">
-        <article>
-          <h2>Sobre a Disciplina DIW</h2>
-          <p>
-            Nesta cadeira aprendemos a criar layouts web usando HTML5 semântico,
-            regras de CSS3 e técnicas de Web Design responsivo para garantir que
-            o site funciona em telemóveis e computadores.
-          </p>
-        </article>
-        <aside>
-          <!-- O professor pediu a wordcloud. Substitui o src pelo caminho da tua imagem se a tiveres -->
-          <img
-            src="images/wordcloud.png"
-            alt="Wordcloud da Disciplina"
-            style="max-width: 100%"
-          />
-        </aside>
-      </div>
-    </section>
+    <ul>
+      <li><a href="lab1/index.html">Laboratório 1</a></li>
+      <li><a href="lab2/index.html">Laboratório 2</a></li>
+      <li><a href="lab3/index.html">Laboratório 3 (Dnipro)</a></li>
+    </ul>
   </body>
 </html>
