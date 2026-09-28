@@ -1,15 +1,61 @@
 <!doctype html>
 <html lang="pt">
   <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dnipro</title>
+    <title>Dnipro - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos de salvamento automático para a home do Lab 3 */
+      body {
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .menu-cidades {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        background-color: #2c3e50;
+        padding: 20px;
+      }
+      .menu-cidades a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 25px;
+        background-color: #34495e;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      .menu-cidades a:hover {
+        background-color: #e74c3c;
+      }
+      .home-content {
+        max-width: 800px;
+        margin: 50px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .home-content h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+      .home-content p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1>Dnipro</h1>
-      <nav>
+      <nav class="menu-cidades">
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
         <a href="multimedia.html">Multimédia</a>
@@ -17,16 +63,13 @@
       </nav>
     </header>
 
-    <main>
-      <h2>Home</h2>
+    <main class="home-content">
+      <h1>Dnipro</h1>
       <p>
         Dnipro é uma cidade incrível localizada nas margens do rio Dniepre, na
         Ucrânia.
       </p>
-    </main>
-
-    <footer>
       <p>DIW 2026</p>
-    </footer>
+    </main>
   </body>
 </html>
