@@ -4,75 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações - Dnipro</title>
-    <!-- Mantém a ligação ao teu CSS geral para o menu -->
     <link rel="stylesheet" href="styles.css" />
-
-    <!-- CSS Específico desta página para cumprir a Grelha e os Espaços Vazios -->
     <style>
-      .grid-container {
+      .info-titulo {
+        text-align: center;
+        padding: 20px;
+        color: #333;
+      }
+      .info-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
-        grid-auto-rows: 200px;
-        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
         padding: 40px;
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
       }
-
-      .grid-item {
+      .bloco-largo {
+        grid-column: 1 / 3;
         background-color: #34495e;
         color: white;
-        padding: 20px;
+        padding: 50px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .bloco-texto {
+        background-color: #2c3e50;
+        color: white;
+        padding: 40px;
         border-radius: 10px;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-align: center;
       }
-
-      .img-item {
+      .imagem-grid {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
       }
-
-      /* O TRUQUE PARA O PROFESSOR: Posições específicas */
-      .item-1 {
-        grid-column: 1 / 3; /* Ocupa a coluna 1 e 2 */
-        grid-row: 1;
-      }
-      .item-2 {
-        grid-column: 3; /* Fica na coluna 3 */
-        grid-row: 1 / 3; /* Ocupa duas linhas de altura */
-        padding: 0;
-      }
-
-      /* ATENÇÃO: A coluna 1 da linha 2 não tem nada atribuído.
-           Este é o "espaço vazio" intencional que ele pediu! */
-
-      .item-3 {
-        grid-column: 2; /* Fica no meio */
-        grid-row: 2;
-      }
-      .item-4 {
-        grid-column: 1 / 3; /* Ocupa as colunas 1 e 2 na última linha */
-        grid-row: 3;
-        padding: 0;
-      }
-
-      /* Para o telemóvel não desformatar tudo */
       @media (max-width: 768px) {
-        .grid-container {
+        .info-grid {
           grid-template-columns: 1fr;
-          grid-auto-rows: auto;
         }
-        .item-1,
-        .item-2,
-        .item-3,
-        .item-4 {
-          grid-column: 1;
-          grid-row: auto;
+        .bloco-largo {
+          grid-column: 1 / 2;
         }
       }
     </style>
@@ -88,40 +63,26 @@
     </header>
 
     <main>
-      <h1 style="text-align: center; margin-top: 30px; color: #2c3e50">
-        Cultura e Informações
-      </h1>
-
-      <div class="grid-container">
-        <div class="grid-item item-1">
+      <h1 class="info-titulo">Cultura e Informações</h1>
+      <div class="info-grid">
+        <div class="bloco-largo">
           <p>
             Dnipro é famosa pela sua arquitetura e cultura. Este bloco está
             posicionado especificamente para ocupar duas colunas na nossa grelha
             2D.
           </p>
         </div>
-
-        <div class="grid-item item-2">
-          <img
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-            alt="Imagem Vertical"
-            class="img-item"
-          />
-        </div>
-
-        <!-- O espaço em branco pedido pelo professor acontece automaticamente à esquerda deste elemento -->
-        <div class="grid-item item-3">
+        <div class="bloco-texto">
           <p>
             O espaço vazio à esquerda foi deixado de propósito para dar "peso"
             ao web design.
           </p>
         </div>
-
-        <div class="grid-item item-4">
+        <div>
           <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-            alt="Imagem Horizontal"
-            class="img-item"
+            src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+            alt="Cultura de Dnipro"
+            class="imagem-grid"
           />
         </div>
       </div>
