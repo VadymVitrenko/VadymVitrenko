@@ -9,12 +9,12 @@ const btnDouble = document.querySelector('#btn-double');
 const image = document.querySelector('#interactive-img');
 const coordsDisplay = document.querySelector('#mouse-coords');
 
-// 1. Evento 'click' -> Altera o TEXTO e altera o ESTILO (cor)
-btnClick.addEventListener('click', function() {
+
+function counter() {
     counter++;
     counterDisplay.textContent = counter; // Alteração de conteúdo
     counterDisplay.style.color = '#ff5722'; // Alteração de estilo
-});
+}
 
 // 2. Evento 'dblclick' -> Altera o TEXTO e o ESTILO (tamanho e cor)
 btnDouble.addEventListener('dblclick', function() {
