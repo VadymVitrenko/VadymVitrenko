@@ -3,43 +3,217 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multimédia</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Multimédia - Dnipro</title>
     <style>
+      /* --- RESET E BASE (Idêntico ao teu Index) --- */
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #1a252f; /* Fundo escuro condizente com o tema */
+        color: #fff;
+      }
+
+      /* --- MENU DE NAVEGAÇÃO REESTILIZADO --- */
+      nav {
+        background-color: #0f171e;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: #f39c12; /* Tom dourado/laranja para os destaques */
+      }
+
+      /* --- SECÇÃO DE DESTAQUE --- */
+      .multi-destaque {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+      }
+      .imagem-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .img-full {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(50%);
+      }
+      .texto-emblematico {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+        width: 100%;
+      }
+
+      /* --- SECÇÃO DE FOTOS --- */
+      .multi-fotos {
+        padding: 80px 20px;
+        text-align: center;
+        background-color: #1a252f;
+      }
+      .multi-fotos h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #fff;
+      }
+      .foto-efeito {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .foto-efeito:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+      }
+
+      /* --- EFEITO 1: VÍDEO DE FUNDO --- */
+      .video-bg-section {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .video-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+      .video-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        background-color: rgba(15, 23, 30, 0.6);
+        padding: 50px 70px;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+      .video-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+      }
+
+      /* --- EFEITO 2: PARALLAX --- */
+      .parallax-section {
+        position: relative;
+        height: 70vh;
+        background-image: url("https://unsplash.com");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .parallax-content {
+        text-align: center;
+        color: white;
+        background-color: rgba(15, 23, 30, 0.75);
+        padding: 50px 70px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+      }
+      .parallax-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+      }
+
+      /* RODAPÉ E ESPAÇO DE SCROLL */
+      .espaco-fim {
+        height: 40vh;
+        background-color: #0f171e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.2rem;
       }
     </style>
   </head>
   <body>
-    <header>
-      <nav class="menu-cidades">
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
-    </header>
+    <!-- Menu unificado com o padrão do teu portefólio -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="local.html">Localização</a></li>
+        <li><a href="multimedia.html">Multimédia</a></li>
+        <li><a href="info.html">Informação</a></li>
+      </ul>
+    </nav>
 
     <main>
       <!-- Secção de Destaque -->
       <section class="multi-destaque">
         <div class="imagem-container">
+          <!-- Certifica-te de que tens a foto correta na pasta images/ se quiseres usar local -->
           <img
-            src="images/dnipro1.jpg"
+            src="https://unsplash.com"
             alt="Paisagem de Dnipro"
             class="img-full"
           />
-          <h2 class="texto-emblematico">Dnipro - Paisagem Urbana</h2>
+          <h2 class="texto-emblematico">
+            Dnipro <br /><span style="font-size: 2rem; font-weight: 300"
+              >Paisagem Urbana</span
+            >
+          </h2>
         </div>
       </section>
 
       <!-- Secção de Fotos -->
       <section class="multi-fotos">
         <h2>Fotografias</h2>
-        <br />
         <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=500&q=60"
+          src="https://unsplash.com"
           alt="Foto de Dnipro"
           class="foto-efeito"
         />
@@ -48,14 +222,12 @@
       <!-- Efeito 1: Vídeo de Fundo -->
       <section class="video-bg-section">
         <video autoplay loop muted playsinline class="video-bg">
-          <source
-            src="https://cdn.pixabay.com/video/2020/05/25/40144-424855424_tiny.mp4"
-            type="video/mp4"
-          />
+          <source src="https://pixabay.com" type="video/mp4" />
+          O seu browser não suporta tags de vídeo.
         </video>
         <div class="video-content">
           <h2>Relaxamento Visual</h2>
-          <p>Vídeo em background a funcionar.</p>
+          <p>Vídeo em background integrado com sucesso.</p>
         </div>
       </section>
 
@@ -63,8 +235,13 @@
       <section class="parallax-section">
         <div class="parallax-content">
           <h2>Efeito Parallax</h2>
-          <p>Faz scroll para cima e para baixo para veres o efeito.</p>
+          <p>Faz scroll para cima e para baixo para veres o efeito dinâmico.</p>
         </div>
+      </section>
+
+      <!-- Fim de Página -->
+      <section class="espaco-fim">
+        <p>Fim da página multimédia • Interfaces Web</p>
       </section>
     </main>
   </body>
