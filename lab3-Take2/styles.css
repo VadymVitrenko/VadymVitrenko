@@ -1,0 +1,97 @@
+#inicio {
+  height: 100vh;
+  background-image: url('images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+nav ul{
+
+list-style: none;
+
+padding: 0;
+
+margin: 0;
+
+display: flex;
+
+gap: 1rem;
+}
+
+nav a{
+
+text-decoration: none;
+
+color: inherit;
+
+}
+
+#projetos {
+  height: 100vh;
+  background-color: #ffdab9; /* Cor de fundo pêssego (conforme o print) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cadeira {
+  height: 100vh;
+  background-color: #1e293b; /* Cor de fundo diferente */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* O POSICIONAMENTO DO TEXTO QUE O PROFESSOR PEDIU (POSITION) */
+.caixa-de-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* O BOTÃO CALL TO ACTION (CTA) */
+.botao-cta {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f59e0b; /* Cor viva de destaque */
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* OS CARDS EM ROW COM FLEX (Conforme o print dos Projetos) */
+.cards-container {
+  display: flex; /* Obrigatoriamente flex para os alinhar em linha */
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  background-color: #ff8da1; /* Cor rosa dos cards do print */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .diw-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .diw-texto {
+    text-align: left;
+  }
+}
