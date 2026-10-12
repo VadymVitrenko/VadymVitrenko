@@ -1,50 +1,154 @@
- * {
-        box-sizing: border-box;
-      }
-      body {
-        font-family: sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-      }
-      .menu-cidades {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        background-color: #2c3e50;
-        padding: 20px;
-      }
-      .menu-cidades a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 25px;
-        background-color: #34495e;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-      }
-      .menu-cidades a:hover {
-        background-color: #e74c3c;
-      }
-      .home-content {
-        max-width: 800px;
-        margin: 50px auto;
-        background: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-      .home-content h1 {
-        color: #2c3e50;
-        margin-bottom: 20px;
-      }
-      .home-content p {
-        color: #555;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
+/* --- Reset Global --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
 
+/* --- Menu Superior --- */
+header {
+  background-color: #1e3a8a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
+.menu-cidades {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+}
+
+.menu-cidades a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu-cidades a:hover {
+  color: #93c5fd;
+}
+
+/* --- Efeito Parallax Superior --- */
+.parallax-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/dnipro2.jpg');
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.parallax-titulo h2 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+/* --- Galeria de Fotos (Caixa Branca Centralizada) --- */
+.seccao-fotos {
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.seccao-fotos h3 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.foto-galeria {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Efeito Vídeo de Fundo --- */
+.video-bg-section {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+}
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+.video-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.video-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* --- Segundo Bloco Parallax --- */
+.parallax-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/dnipro2.jpg');
+  height: 45vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.parallax-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* --- Fim de Página / Rodapé --- */
+.espaco-fim {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
