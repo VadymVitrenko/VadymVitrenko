@@ -3,70 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dnipro - Multimédia</title>
-    <!-- Ligação correta para o teu ficheiro CSS centralizado -->
+    <title>Dnipro • Multimédia</title>
+    <!-- Google Fonts para tipografia moderna -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Folha de estilos principal -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- O teu menu azul original unificado -->
-    <header>
+    <!-- Menu de navegação superior fixo e elegante -->
+    <header class="site-header">
       <nav class="menu-cidades">
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
+        <a href="multimedia.html" class="ativo">Multimédia</a>
         <a href="info.html">Informação</a>
       </nav>
     </header>
 
     <main>
-      <!-- Cabeçalho com o Efeito Parallax Superior -->
+      <!-- Cabeçalho com Efeito Parallax Superior -->
       <section class="parallax-header">
         <div class="parallax-titulo">
           <h2>Dnipro</h2>
-          <p style="margin: 5px 0 0 0; opacity: 0.9">Paisagem Urbana</p>
+          <p>Paisagem Urbana</p>
         </div>
       </section>
 
-      <!-- Galeria de Fotos centralizada na caixa branca -->
+      <!-- Galeria de Fotos centralizada numa caixa moderna -->
       <section class="seccao-fotos">
-        <h3>Fotografias da Cidade</h3>
-        <p style="color: #555; margin-bottom: 20px">
-          Veja abaixo algumas das melhores perspetivas e paisagens da cidade de
-          Dnipro.
-        </p>
-        <img
-          src="images/dnipro2.jpg"
-          alt="Foto de Dnipro"
-          class="foto-galeria"
-        />
+        <div class="container-caixa">
+          <h3>Fotografias da Cidade</h3>
+          <p class="subtitulo-seccao">
+            Explore abaixo algumas das melhores perspetivas e paisagens da
+            cidade de Dnipro.
+          </p>
+          <div class="imagem-wrapper">
+            <img
+              src="images/dnipro2.jpg"
+              alt="Vista panorâmica da cidade de Dnipro"
+              class="foto-galeria"
+            />
+          </div>
+        </div>
       </section>
 
-      <!-- Efeito Vídeo de Fundo (Com link de ficheiro .mp4 real) -->
+      <!-- Efeito Vídeo de Fundo -->
       <section class="video-bg-section">
         <video autoplay loop muted playsinline class="video-bg">
-          <source src="https://mixkit.co" type="video/mp4" />
+          <!-- Substituído o link genérico por um link de vídeo MP4 funcional de exemplo -->
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-4150-large.mp4"
+            type="video/mp4"
+          />
           O seu browser não suporta tags de vídeo.
         </video>
+        <div class="video-overlay"></div>
         <div class="video-content">
           <h2>Relaxamento Visual</h2>
           <p>Vídeo em background integrado com sucesso.</p>
         </div>
       </section>
 
-      <!-- Segundo Bloco de Efeito Parallax Fixo requerido pelo laboratório -->
+      <!-- Segundo Bloco de Efeito Parallax Fixo -->
       <section class="parallax-section">
         <div class="parallax-content">
           <h2>Efeito Parallax</h2>
-          <p style="color: #fff">
-            Faz scroll para cima e para baixo para veres o efeito dinâmico.
+          <p>
+            Faz scroll para cima e para baixo para veres o efeito dinâmico em
+            camadas.
           </p>
         </div>
       </section>
-
-      <!-- Fim de Página / Rodapé -->
-      <section class="espaco-fim">
-        <p>Fim da página multimédia • Interfaces Web</p>
-      </section>
     </main>
+
+    <!-- Rodapé Semântico -->
+    <footer class="site-footer">
+      <p>Fim da página multimédia • Interfaces Web</p>
+    </footer>
   </body>
 </html>
