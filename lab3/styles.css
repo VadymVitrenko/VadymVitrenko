@@ -7,12 +7,12 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #1a252f; /* Fundo escuro em todo o site */
+  background-color: #1a252f;
   color: #fff;
-  padding-top: 70px; /* Evita que o menu tape o topo das páginas */
+  padding-top: 70px;
 }
 
-/* --- MENU DE NAVEGAÇÃO SUPERIOR (FIXO) --- */
+/* --- MENU DE NAVEGAÇÃO REESTILIZADO E FIXO --- */
 nav {
   background-color: #0f171e;
   height: 70px;
@@ -43,10 +43,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #f39c12; /* Destaque laranja */
+  color: #f39c12;
 }
 
-/* --- ESTILOS DA PÁGINA MULTIMÉDIA --- */
+/* --- SECÇÃO DE DESTAQUE --- */
 .multi-destaque {
   position: relative;
   width: 100%;
@@ -80,6 +80,7 @@ nav ul li a:hover {
   width: 100%;
 }
 
+/* --- SECÇÃO DE FOTOS --- */
 .multi-fotos {
   padding: 80px 20px;
   text-align: center;
@@ -104,7 +105,7 @@ nav ul li a:hover {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
 }
 
-/* --- EFEITO: VÍDEO DE FUNDO --- */
+/* --- EFEITO 1: VÍDEO DE FUNDO --- */
 .video-bg-section {
   position: relative;
   height: 60vh;
@@ -140,13 +141,12 @@ nav ul li a:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- EFEITO: PARALLAX FIXO --- */
+/* --- EFEITO 2: PARALLAX (Mapeado para dnipro3.jpg) --- */
 .parallax-section {
   position: relative;
   height: 70vh;
-  /* Substitui 'fundo.jpg' pelo nome real da tua foto dentro da pasta images */
-  background-image: url("images/fundo.jpg");
-  background-attachment: fixed; /* Fixa a imagem ao fazer scroll */
+  background-image: url("images/dnipro3.jpg");
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
