@@ -3,52 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multimédia - Dnipro</title>
-    <!-- Liga ao teu ficheiro CSS único -->
-    <link rel="stylesheet" href="styles.css" />
+    <title>Dnipro - Multimédia</title>
+    <!-- Ligação correta para o teu ficheiro CSS centralizado -->
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- Menu Global Fixo -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="local.html">Localização</a></li>
-        <li><a href="multimedia.html">Multimédia</a></li>
-        <li><a href="info.html">Informação</a></li>
-      </ul>
-    </nav>
+    <!-- O teu menu azul original unificado -->
+    <header>
+      <nav class="menu-cidades">
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
 
     <main>
-      <!-- Destaque Principal com imagem real -->
-      <section class="multi-destaque">
-        <div class="imagem-container">
-          <img
-            src="images/dnipro1.jpg"
-            alt="Paisagem de Dnipro"
-            class="img-full"
-          />
-          <h2 class="texto-emblematico">
-            Dnipro <br /><span style="font-size: 2rem; font-weight: 300"
-              >Paisagem Urbana</span
-            >
-          </h2>
+      <!-- Cabeçalho com o Efeito Parallax Superior -->
+      <section class="parallax-header">
+        <div class="parallax-titulo">
+          <h2>Dnipro</h2>
+          <p style="margin: 5px 0 0 0; opacity: 0.9">Paisagem Urbana</p>
         </div>
       </section>
 
-      <!-- Galeria de Fotos com imagem real -->
-      <section class="multi-fotos">
-        <h2>Fotografias</h2>
+      <!-- Galeria de Fotos centralizada na caixa branca -->
+      <section class="seccao-fotos">
+        <h3>Fotografias da Cidade</h3>
+        <p style="color: #555; margin-bottom: 20px">
+          Veja abaixo algumas das melhores perspetivas e paisagens da cidade de
+          Dnipro.
+        </p>
         <img
           src="images/dnipro2.jpg"
           alt="Foto de Dnipro"
-          class="foto-efeito"
+          class="foto-galeria"
         />
       </section>
 
-      <!-- Efeito Vídeo de Fundo -->
+      <!-- Efeito Vídeo de Fundo (Com link de ficheiro .mp4 real) -->
       <section class="video-bg-section">
         <video autoplay loop muted playsinline class="video-bg">
           <source src="https://mixkit.co" type="video/mp4" />
+          O seu browser não suporta tags de vídeo.
         </video>
         <div class="video-content">
           <h2>Relaxamento Visual</h2>
@@ -56,15 +53,17 @@
         </div>
       </section>
 
-      <!-- Efeito Parallax Fixo -->
+      <!-- Segundo Bloco de Efeito Parallax Fixo requerido pelo laboratório -->
       <section class="parallax-section">
         <div class="parallax-content">
           <h2>Efeito Parallax</h2>
-          <p>Faz scroll para cima e para baixo para veres o efeito dinâmico.</p>
+          <p style="color: #fff">
+            Faz scroll para cima e para baixo para veres o efeito dinâmico.
+          </p>
         </div>
       </section>
 
-      <!-- Rodapé -->
+      <!-- Fim de Página / Rodapé -->
       <section class="espaco-fim">
         <p>Fim da página multimédia • Interfaces Web</p>
       </section>
