@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 3 - Position</title>
+    <style>
+      /* Posição Relativa */
+      .caixa {
+        width: 300px;
+        height: 30px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        line-height: 30px;
+      }
+
+      .azul {
+        background-color: #2196f3;
+      }
+
+      .amarelo {
+        background-color: #fff59d;
+        border: 1px solid #c0ca33;
+      }
+
+      /* O elemento relativo move-se em relação à sua posição original */
+      .relativo {
+        position: relative;
+        left: 20px;
+      }
+
+      /* Posição Absoluta */
+      .fora {
+        background-color: salmon;
+        height: 100px;
+        width: 350px;
+        position: relative; /* Contexto de posicionamento para o elemento filho */
+        margin-top: 20px;
+      }
+
+      .dentro {
+        background-color: gray;
+        width: 40px;
+        height: 40px;
+        position: absolute; /* Posiciona-se em relação ao contentor .fora */
+        right: -10px;
+        bottom: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Identificação incluída -->
+    <h1>Posição relativa - Vadym</h1>
+
+    <div class="caixa azul">1</div>
+    <div class="caixa azul relativo">2</div>
+    <div class="caixa amarelo">3</div>
+
+    <h1>Posição absoluta</h1>
+
+    <div class="fora">
+      <div class="dentro"></div>
+    </div>
+  </body>
+</html>

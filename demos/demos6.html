@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 6 - Layout Responsivo com Media Query</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+      }
+
+      /* Layout Base (Ecrãs grandes / Desktop) */
+      div.contentor {
+        margin: 20px;
+        height: 500px;
+        background-color: purple;
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "menu main aside"
+          "menu footer footer";
+        gap: 10px;
+        padding: 10px;
+        grid-template-columns: 20vw 3fr 2fr;
+        grid-template-rows: 15vh 1fr 60px;
+      }
+
+      header {
+        grid-area: header;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      nav {
+        grid-area: menu;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      main {
+        grid-area: main;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      aside {
+        grid-area: info;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: #d3a4d8;
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+
+      /* Media Query para ecrãs com largura até 600px (Mobile) */
+      @media (max-width: 600px) {
+        div.contentor {
+          height: 900px;
+          background-color: khaki;
+          grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "aside"
+            "footer";
+          grid-template-columns: auto;
+          grid-template-rows: 15vh 10vh 2fr 1fr 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contentor">
+      <header>título</header>
+      <nav>menu</nav>
+      <main>conteúdo</main>
+      <aside>info</aside>
+      <!-- Identificação obrigatória do aluno -->
+      <footer>Vadym</footer>
+    </div>
+  </body>
+</html>

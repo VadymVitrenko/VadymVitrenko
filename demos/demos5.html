@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 5 - CSS Grid</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+      }
+
+      div.contentor {
+        margin: 20px;
+        height: 500px;
+        background-color: purple;
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "menu main aside"
+          "menu footer footer";
+        gap: 10px;
+        padding: 10px;
+        grid-template-columns: 20vw 3fr 2fr;
+        grid-template-rows: 15vh 1fr 60px;
+      }
+
+      /* Associação das áreas às tags semânticas */
+      header {
+        grid-area: header;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      nav {
+        grid-area: menu;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      main {
+        grid-area: main;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      aside {
+        grid-area: info;
+        background-color: #d3a4d8;
+        font-size: 2rem;
+        padding: 10px;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: #d3a4d8;
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contentor">
+      <header>título</header>
+      <nav>menu</nav>
+      <main>conteúdo</main>
+      <aside>info</aside>
+      <!-- Identificação colocada na área inferior -->
+      <footer>Vadym</footer>
+    </div>
+  </body>
+</html>

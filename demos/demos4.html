@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 4 - Centrar com Flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      div {
+        background-color: DodgerBlue;
+        height: 100vh;
+
+        /* Centramento perfeito horizontal e vertical */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      span {
+        font-size: 4rem;
+      }
+
+      h1 {
+        color: white;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>😀</span>
+      <!-- Identificação obrigatória do aluno -->
+      <h1>Vadym</h1>
+    </div>
+  </body>
+</html>

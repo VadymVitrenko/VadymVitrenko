@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 2 - Composição de Seletores</title>
+    <style>
+      /* 1. Filho direto / primeiro elemento: Vermelho */
+      main > div:first-child {
+        color: red;
+      }
+
+      /* 2. Irmão adjacente após o span: Azul */
+      span + div {
+        color: blue;
+      }
+
+      /* 3. Irmão adjacente após div: Verde */
+      div + div {
+        color: green;
+      }
+
+      /* 4. Irmão adjacente após o bloco div: Violeta (os outros p ficam pretos) */
+      div + p {
+        color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Identificação obrigatória do aluno -->
+      <div>Vermelho - Vadym</div>
+      <div>
+        <span>Preto</span>
+        <div>Azul</div>
+        <div>Verde</div>
+      </div>
+      <p>Violeta</p>
+      <p>Preto</p>
+      <p>Preto</p>
+    </main>
+  </body>
+</html>
