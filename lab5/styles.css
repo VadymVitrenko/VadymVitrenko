@@ -1,0 +1,16 @@
+/* 1. O Contentor cinzento */
+.container {
+  display: flex;
+  height: 200px;
+  background-color: grey;
+  gap: 10px;
+  padding: 10px; /* para as bolas não ficarem coladas à borda */
+}
+
+/* 2. As 4 Bolas */
+.bola {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: dodgerblue; /* qualquer cor à escolha */
+}

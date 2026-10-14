@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab 5</title>
+    <!-- Ligação ao ficheiro CSS -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- 1. Passa por aqui! (Evento: mouseover / mouseleave) -->
+    <!-- 1. Passa por aqui! -->
     <div style="margin-bottom: 20px">
       <span id="elemento-passar" style="font-size: 1.2rem; cursor: pointer"
         >1. Passa por aqui!</span
       >
     </div>
 
-    <!-- 2. Pinta-me! (Evento: click nos botões para mudar cor de fundo ou texto) -->
+    <!-- 2. Pinta-me! -->
     <div style="margin-bottom: 20px">
       <span style="font-size: 1.2rem; color: red; font-weight: bold"
         >2. Pinta-me!</span
       >
-      <button id="btn-red">Red</button>
-      <button id="btn-green">Green</button>
-      <button id="btn-blue">Blue</button>
+      <button class="color" data-color="red">Red</button>
+      <button class="color" data-color="green">Green</button>
+      <button class="color" data-color="blue">Blue</button>
     </div>
 
-    <!-- 3. Experimenta escrever... (Evento: input / keyup / change) -->
+    <!-- 3. Experimenta escrever... -->
     <div style="margin-bottom: 20px">
       <label for="campo-escrita" style="font-size: 1.2rem"
         >3. Experimenta escrever...</label
@@ -31,16 +33,21 @@
       <input type="text" id="campo-escrita" style="background-color: #b4dbdc" />
     </div>
 
-    <!-- 4. Escolha uma cor em inglês (Evento: click no botão ou submit de formulário) -->
+    <!-- 4. Escolha uma cor (com select e this) -->
     <div style="margin-bottom: 20px">
-      <label for="campo-cor" style="font-size: 1.2rem"
-        >4. Escolha uma cor em inglês:</label
+      <label for="select-cor" style="font-size: 1.2rem"
+        >4. Escolha uma cor:</label
       >
-      <input type="text" id="campo-cor" value="p" />
-      <button id="btn-submeter">submeter</button>
+      <select id="select-cor">
+        <option value="white">Selecione uma cor</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+      </select>
     </div>
 
-    <!-- 5. Conta! (Evento: click para incrementar o contador) -->
+    <!-- 5. Conta! -->
     <div style="margin-bottom: 20px">
       <span style="font-size: 1.2rem">5. </span>
       <button id="btn-conta">Conta!</button>
@@ -48,5 +55,29 @@
         >33</span
       >
     </div>
+
+    <hr />
+
+    <!-- NOVO: Select flex -->
+    <div style="margin-top: 20px">
+      <h3>Select flex</h3>
+      <label for="select-flex">Direção:</label>
+      <select id="select-flex" style="margin-bottom: 10px">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">line</option>
+        <option value="column-reverse">line-reverse</option>
+      </select>
+
+      <div class="container" id="container-flex">
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+      </div>
+    </div>
+
+    <!-- Ligação ao ficheiro JavaScript -->
+    <script src="main.js"></script>
   </body>
 </html>
