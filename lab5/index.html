@@ -79,5 +79,32 @@
 
     <!-- Ligação ao ficheiro JavaScript -->
     <script src="main.js"></script>
+    <!-- Exercício: Formulário onsubmit -->
+    <div style="margin-top: 30px">
+      <form id="meu-formulario">
+        <input id="nome" type="text" placeholder="insira o seu nome" required />
+        <input
+          id="idade"
+          type="number"
+          placeholder="insira a sua idade"
+          required
+        />
+        <input type="submit" value="Submeter" />
+      </form>
+
+      <!-- Parágrafo onde a mensagem vai ser mostrada -->
+      <p
+        id="mensagem"
+        style="font-size: 1.2rem; font-weight: bold; margin-top: 10px"
+      ></p>
+    </div>
+    <!-- Exercício: Contador com Local Storage -->
+    <div style="margin-top: 30px">
+      <h3>Contador com Local Storage</h3>
+      <h1 id="contador-ls">0</h1>
+      <button id="btn-inc">+ Incrementar</button>
+      <button id="btn-dec">- Decrementar</button>
+      <button id="btn-res">Reset</button>
+    </div>
   </body>
 </html>
