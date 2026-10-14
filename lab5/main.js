@@ -125,3 +125,16 @@ const resetarLS = () => {
 if (btnInc) btnInc.addEventListener("click", somarLS);
 if (btnDec) btnDec.addEventListener("click", subtrairLS);
 if (btnRes) btnRes.addEventListener("click", resetarLS);
+
+let contadorTempo = 0;
+const visorTempo = document.querySelector("#valor-temporizador");
+
+const count = () => {
+  contadorTempo++;
+  if (visorTempo) {
+    visorTempo.textContent = contadorTempo;
+  }
+};
+
+// Executa a função count a cada 1000 milissegundos (1 segundo)
+setInterval(count, 1000);
