@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 4 - Modelo de Caixa (Box Model)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #0d47a1;
+        text-align: center;
+      }
+
+      .container-externo {
+        background-color: #ffffff;
+        border: 2px dashed #90a4ae;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* O elemento central onde demonstramos as propriedades pedidas */
+      .caixa-box-model {
+        /* 1. Largura do conteúdo (Content) */
+        width: 380px;
+
+        /* 2. Cor de fundo (background) */
+        background-color: #b2dfdb;
+
+        /* 3. Espaçamento interno (padding) */
+        padding: 25px;
+
+        /* 4. Contorno externo (border) */
+        border: 5px solid #00695c;
+
+        /* 5. Cantos arredondados (border-radius) */
+        border-radius: 15px;
+
+        /* 6. Espaçamento exterior (margin) - centralizado */
+        margin: 30px auto;
+
+        text-align: center;
+        color: #004d40;
+        font-size: 1.05rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Modelo de Caixa (Box Model) - Vadym Vitrenko</h2>
+
+    <div class="container-externo">
+      <p style="text-align: center; margin: 0; color: #555">
+        (Container externo para evidenciar a margem)
+      </p>
+
+      <div class="caixa-box-model">
+        <h3>Conteúdo Central</h3>
+        <p>
+          <strong>Padding:</strong> 25px (espaço interior entre o texto e a
+          borda)
+        </p>
+        <p><strong>Border:</strong> 5px solid (linha verde-escura)</p>
+        <p><strong>Border-radius:</strong> 15px (cantos arredondados)</p>
+        <p><strong>Background:</strong> cor de fundo verde-água</p>
+        <p>
+          <strong>Margin:</strong> 30px (afastamento deste bloco em relação ao
+          container)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

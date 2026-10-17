@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 2 - Tipos de Seletores CSS</title>
+    <style>
+      /* 1. Seletor Universal (*) */
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* 2. Seletor de Tipo / Tag (h2, p) */
+      h2 {
+        color: #0d47a1;
+        border-bottom: 2px solid #0d47a1;
+        padding-bottom: 5px;
+      }
+
+      p {
+        color: #333333;
+        font-size: 1rem;
+      }
+
+      /* 3. Seletor de Classe (.destaque) */
+      .destaque {
+        background-color: #fff59d;
+        padding: 8px;
+        border-left: 5px solid #fbc02d;
+      }
+
+      /* 4. Seletor de ID (#elemento-unico) */
+      #elemento-unico {
+        color: #b71c1c;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      /* 5. Seletor de Atributo ([type="text"]) */
+      input[type="text"] {
+        border: 2px solid #2e7d32;
+        padding: 8px;
+        border-radius: 4px;
+        width: 250px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demonstração de Seletores CSS - Vadym Vitrenko</h2>
+
+    <p>
+      1. Este parágrafo é estilizado pelo seletor universal e pelo seletor de
+      tag p.
+    </p>
+
+    <p class="destaque">
+      2. Este parágrafo utiliza um seletor de classe (.destaque).
+    </p>
+
+    <p id="elemento-unico">
+      3. Este elemento utiliza um seletor de ID único (#elemento-unico).
+    </p>
+
+    <div style="margin-top: 15px">
+      <label for="campo"
+        >4. Campo estilizado por seletor de atributo [type="text"]:</label
+      ><br />
+      <input type="text" id="campo" value="Vadym Vitrenko" />
+    </div>
+  </body>
+</html>

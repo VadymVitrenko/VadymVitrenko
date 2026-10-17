@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 3 - Composição de Seletores (Combinadores)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.5;
+      }
+
+      h2 {
+        color: #0d47a1;
+      }
+
+      /* 1. Seletor Descendente (espaço): qualquer p dentro de .caixa-descendente */
+      .caixa-descendente p {
+        color: #d84315;
+        font-style: italic;
+      }
+
+      /* 2. Filho Direto (>): apenas p que seja filho imediato de .caixa-pai */
+      .caixa-pai > p {
+        background-color: #bbdefb;
+        padding: 8px;
+        border-left: 4px solid #1976d2;
+        font-weight: bold;
+      }
+
+      /* 3. Irmão Adjacente (+): o p imediatamente a seguir ao h3 */
+      h3 + p {
+        background-color: #c8e6c9;
+        padding: 8px;
+        border-left: 4px solid #388e3c;
+      }
+
+      /* 4. Irmãos Gerais (~): todos os p irmãos que surgem depois do h4 */
+      h4 ~ p {
+        border-bottom: 2px dashed #f57c00;
+        padding-bottom: 4px;
+      }
+
+      .bloco {
+        border: 1px solid #ccc;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Composição de Seletores - Vadym Vitrenko</h2>
+
+    <!-- 1. Descendente -->
+    <div class="bloco caixa-descendente">
+      <strong>1. Seletor Descendente (.caixa-descendente p):</strong>
+      <div>
+        <p>
+          Este parágrafo está dentro de um div interno, mas recebe o estilo por
+          ser descendente.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. Filho Direto -->
+    <div class="bloco caixa-pai">
+      <strong>2. Filho Direto (.caixa-pai > p):</strong>
+      <p>Este parágrafo é filho direto e fica destacado a azul.</p>
+      <div>
+        <p style="font-weight: normal; background: none; border: none">
+          Este parágrafo é neto (está dentro de outro div) e não recebe o estilo
+          azul.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. Irmão Adjacente -->
+    <div class="bloco">
+      <strong>3. Irmão Adjacente (h3 + p):</strong>
+      <h3>Título de Referência</h3>
+      <p>
+        Este parágrafo vem imediatamente a seguir ao h3 e fica destacado a
+        verde.
+      </p>
+      <p>
+        Este segundo parágrafo já não é adjacente direto, por isso não tem fundo
+        verde.
+      </p>
+    </div>
+
+    <!-- 4. Irmãos Gerais -->
+    <div class="bloco">
+      <strong>4. Irmãos Gerais (h4 ~ p):</strong>
+      <h4>Outro Título de Referência</h4>
+      <p>Primeiro irmão a seguir ao h4 (recebe linha tracejada laranja).</p>
+      <p>
+        Segundo irmão a seguir ao h4 (também recebe linha tracejada laranja).
+      </p>
+    </div>
+  </body>
+</html>

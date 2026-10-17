@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 5 - Display Flex</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #0d47a1;
+        text-align: center;
+      }
+
+      /* Contentor Flexbox principal */
+      .flex-container {
+        /* 1. Ativa o modelo flexível */
+        display: flex;
+
+        /* 2. Direção dos elementos (row = horizontal, column = vertical) */
+        flex-direction: row;
+
+        /* 3. Distribuição no eixo principal (horizontal) */
+        justify-content: space-around;
+
+        /* 4. Alinhamento no eixo secundário (vertical) */
+        align-items: center;
+
+        /* 5. Espaço entre os itens */
+        gap: 15px;
+
+        background-color: #ffffff;
+        border: 2px dashed #1976d2;
+        border-radius: 8px;
+        padding: 20px;
+        min-height: 220px;
+        max-width: 700px;
+        margin: 20px auto;
+      }
+
+      /* Itens filhos dentro do Flexbox */
+      .flex-item {
+        background-color: #3f51b5;
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 25px 20px;
+        border-radius: 6px;
+        text-align: center;
+        width: 100px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Variação de altura para demonstrar o align-items: center */
+      .item-maior {
+        padding: 45px 20px;
+        background-color: #1a237e;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demonstração de Display Flex - Vadym Vitrenko</h2>
+
+    <div class="flex-container">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item item-maior">Item 2</div>
+      <div class="flex-item">Item 3</div>
+    </div>
+  </body>
+</html>

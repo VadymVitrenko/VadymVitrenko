@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 7 - Media Queries</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fa;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #1b5e20;
+        text-align: center;
+      }
+
+      .instrucao {
+        text-align: center;
+        color: #666;
+        margin-bottom: 25px;
+      }
+
+      /* 1. COMPONENTE SIMPLES (Estado padrão: ecrãs largos / Desktop) */
+      .alerta-componente {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+        border: 2px solid #2e7d32;
+        border-radius: 6px;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        max-width: 750px;
+        margin: 0 auto 30px auto;
+        transition: all 0.3s ease;
+      }
+
+      /* 2. LAYOUT RESPONSIVO (Estado padrão: 2 colunas lado a lado) */
+      .layout-container {
+        display: flex;
+        gap: 20px;
+        max-width: 750px;
+        margin: 0 auto;
+      }
+
+      .coluna {
+        flex: 1;
+        padding: 25px;
+        border-radius: 8px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .coluna-a {
+        background-color: #388e3c;
+      }
+      .coluna-b {
+        background-color: #4caf50;
+      }
+
+      /* ========================================================= */
+      /* MEDIA QUERY: Aplica alterações quando a largura for <= 650px */
+      /* ========================================================= */
+      @media (max-width: 650px) {
+        /* Efeito no componente simples: muda de verde para vermelho/alerta */
+        .alerta-componente {
+          background-color: #ffebee;
+          color: #c62828;
+          border-color: #c62828;
+        }
+
+        /* Efeito no layout: de colunas lado a lado para empilhamento vertical */
+        .layout-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demonstração de Media Queries - Vadym Vitrenko</h2>
+    <p class="instrucao">
+      Redimensione a largura da janela para observar o comportamento responsivo.
+    </p>
+
+    <!-- Componente Simples -->
+    <div class="alerta-componente">
+      Componente Simples: Modo Desktop (Verde) / Modo Mobile abaixo de 650px
+      (Vermelho)
+    </div>
+
+    <!-- Layout Responsivo -->
+    <div class="layout-container">
+      <div class="coluna coluna-a">Coluna A (Lado a lado em desktop)</div>
+      <div class="coluna coluna-b">Coluna B (Lado a lado em desktop)</div>
+    </div>
+  </body>
+</html>

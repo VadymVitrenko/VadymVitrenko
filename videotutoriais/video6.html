@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo 6 - Display Grid</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #006064;
+        text-align: center;
+      }
+
+      /* Contentor principal Grid */
+      .grid-container {
+        /* 1. Ativa o modelo de grelha bidimensional */
+        display: grid;
+
+        /* 2. Define as colunas: barra lateral fixa (200px) e área flexível (1fr) */
+        grid-template-columns: 200px 1fr;
+
+        /* 3. Define as linhas: cabeçalho, corpo e rodapé */
+        grid-template-rows: 70px 220px 60px;
+
+        /* 4. Espaçamento entre linhas e colunas */
+        gap: 12px;
+
+        max-width: 750px;
+        margin: 20px auto;
+      }
+
+      /* Estilo base das áreas da grelha */
+      .grid-item {
+        padding: 15px;
+        border-radius: 6px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 1.1rem;
+      }
+
+      /* 5. Cabeçalho ocupa todas as colunas (da linha 1 até à última) */
+      .header {
+        grid-column: 1 / -1;
+        background-color: #00838f;
+      }
+
+      /* Barra lateral (ocupa a 1.ª coluna) */
+      .sidebar {
+        background-color: #00acc1;
+      }
+
+      /* Conteúdo principal (ocupa a 2.ª coluna em 1fr) */
+      .content {
+        background-color: #4dd0e1;
+        color: #004d40;
+      }
+
+      /* Rodapé ocupa todas as colunas (da linha 1 até à última) */
+      .footer {
+        grid-column: 1 / -1;
+        background-color: #006064;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demonstração de CSS Grid Layout - Vadym Vitrenko</h2>
+
+    <div class="grid-container">
+      <div class="grid-item header">Cabeçalho (grid-column: 1 / -1)</div>
+      <div class="grid-item sidebar">Sidebar (200px)</div>
+      <div class="grid-item content">Conteúdo Principal (1fr)</div>
+      <div class="grid-item footer">Rodapé (grid-column: 1 / -1)</div>
+    </div>
+  </body>
+</html>
