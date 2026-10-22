@@ -143,4 +143,33 @@ const produtos = [
       "count": 140
     }
   }
-]
+]; // <--- faltava fechar o array aqui
+
+const container = document.querySelector('#lista-produtos');
+
+produtos.forEach(produto => {
+  // 1. Criar o cartão
+  const card = document.createElement('div');
+  card.classList.add('produto-card');
+
+  // 2. Imagem
+  const img = document.createElement('img');
+  img.src = produto.image;
+  img.alt = produto.title;
+
+  // 3. Título (a propriedade no objeto é 'title')
+  const titulo = document.createElement('h2');
+  titulo.textContent = produto.title;
+
+  // 4. Preço
+  const preco = document.createElement('p');
+  preco.textContent = `${produto.price} €`;
+
+  // 5. Montar o cartão
+  card.appendChild(img);
+  card.appendChild(titulo);
+  card.appendChild(preco);
+
+  // 6. Adicionar ao contentor
+  container.appendChild(card);
+});
