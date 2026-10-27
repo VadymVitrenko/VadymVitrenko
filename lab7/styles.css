@@ -155,3 +155,82 @@ footer {
 .produto-card button:hover {
   background-color: #0369a1;
 }
+
+/* Secção do Cesto */
+#cesto {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#cesto > h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.cesto-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Linha de cada item no cesto */
+.cesto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.cesto-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.cesto-item h3 {
+  font-size: 0.95rem;
+  flex: 1;
+  margin: 0 15px;
+  color: #1e293b;
+}
+
+.cesto-item .preco {
+  font-weight: bold;
+  color: #0284c7;
+  margin-right: 15px;
+}
+
+/* Botão de remover */
+.btn-remover {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-remover:hover {
+  background-color: #dc2626;
+}
+
+/* Caixa com o Custo Total */
+.cesto-total {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+  text-align: right;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
