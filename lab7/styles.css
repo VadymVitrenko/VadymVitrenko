@@ -1,3 +1,36 @@
+/* Limpeza geral da página e tipografia */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+/* Cabeçalho principal */
+header {
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Remover os pontos pretos e alinhar o menu na horizontal */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3182ce;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 /* Contentor dos produtos com flexbox */
 #lista-produtos {
   display: flex;
