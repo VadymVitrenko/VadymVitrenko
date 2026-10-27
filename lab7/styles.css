@@ -137,3 +137,21 @@ footer {
   font-size: 0.85rem;
   margin-top: auto;
 }
+
+.produto-card button {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.produto-card button:hover {
+  background-color: #0369a1;
+}
