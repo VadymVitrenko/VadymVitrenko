@@ -9,12 +9,12 @@
     <script>
       url = "amigos.pw.deisi.ulusofona.pt";
 
-      fetch(url).then((response) => {
-        return response.json();
-      });
-      then((data) => console.log(data)).catch((error) =>
-        console.log(error.message),
-      );
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error.message));
     </script>
   </body>
 </html>
