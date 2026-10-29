@@ -21,7 +21,7 @@
           data.forEach((amigo) => {
             li = document.createElement("li");
             li.textContent = amigo.nome;
-            ul.append(li);
+            ul_node.append(li);
           });
         })
         .catch((error) => console.log(error.message));
