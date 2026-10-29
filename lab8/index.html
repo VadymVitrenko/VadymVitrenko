@@ -6,19 +6,25 @@
     <title>Lab 8</title>
   </head>
   <body>
+    <ul></ul>
+
     <script>
       url = "https://amigos.pw.deisi.ulusofona.pt/amigos";
+      const ul_node = document.querySelector("ul");
 
       fetch(url)
         .then((response) => {
           return response.json();
         })
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data);
+          data.forEach((amigo) => {
+            li = document.createElement("li");
+            li.textContent = amigo.nome;
+            ul.append(li);
+          });
+        })
         .catch((error) => console.log(error.message));
     </script>
-
-    <ul>
-      <li></li>
-    </ul>
   </body>
 </html>
