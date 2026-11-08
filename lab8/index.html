@@ -1,30 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 8</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Loja</title>
   </head>
+
   <body>
-    <ul></ul>
+    <header>
+      <h1>A minha Loja</h1>
+      <nav>
+        <ul>
+          <li><a href="#lista-produtos">Produtos</a></li>
+          <li><a href="#cesto">Cesto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <script>
-      url = "https://amigos.pw.deisi.ulusofona.pt/amigos";
-      const ul_node = document.querySelector("ul");
+    <main>
+      <!-- A secção dos produtos fica aqui, dentro do main -->
+      <section id="lista-produtos"></section>
 
-      fetch(url)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          data.forEach((amigo) => {
-            li = document.createElement("li");
-            li.textContent = amigo.nome;
-            ul_node.append(li);
-          });
-        })
-        .catch((error) => console.log(error.message));
-    </script>
+      <!-- A secção do cesto fica reservada para os próximos passos -->
+      <section id="cesto"></section>
+    </main>
+
+    <!-- O rodapé fica mesmo no fim de todo o conteúdo visual -->
+    <footer>@2026 Vadym Vitrenko</footer>
+
+    <!-- Os scripts no fim, na ordem exata de execução -->
+    <script src="produtos.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

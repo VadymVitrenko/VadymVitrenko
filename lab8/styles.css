@@ -1,0 +1,236 @@
+/* --- 1. Definições Globais e Tipografia --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- 2. Cabeçalho e Barra de Navegação --- */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #0284c7;
+  background-color: #f0f9ff;
+}
+
+/* --- 3. Contentor Principal dos Produtos --- */
+#lista-produtos {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* --- 4. Cartão de Produto individual (<article>) --- */
+.produto-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  width: 260px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Imagem do produto */
+.produto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.produto-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Título */
+.produto-card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  min-height: 2.6rem; /* Garante que os cartões ficam alinhados mesmo com títulos de tamanhos diferentes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Preço */
+.produto-card .preco {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin-top: auto; /* Empurra o preço sempre para o fundo do cartão */
+}
+
+/* Descrição (se estiver a ser renderizada) */
+.produto-card .descricao {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- 5. Rodapé / Copyright --- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.produto-card button {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.produto-card button:hover {
+  background-color: #0369a1;
+}
+
+/* Secção do Cesto */
+#cesto {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#cesto > h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.cesto-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Linha de cada item no cesto */
+.cesto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.cesto-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.cesto-item h3 {
+  font-size: 0.95rem;
+  flex: 1;
+  margin: 0 15px;
+  color: #1e293b;
+}
+
+.cesto-item .preco {
+  font-weight: bold;
+  color: #0284c7;
+  margin-right: 15px;
+}
+
+/* Botão de remover */
+.btn-remover {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-remover:hover {
+  background-color: #dc2626;
+}
+
+/* Caixa com o Custo Total */
+.cesto-total {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+  text-align: right;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
