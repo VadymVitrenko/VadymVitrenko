@@ -1,89 +1,133 @@
-const API_URL = "https://deisishop.pw.deisi.ulusofona.pt";
-let todosOsProdutos = [];
+// A. Estado e variáveis com referência de elementos do DOM
+const containerProdutos = document.querySelector('#lista-produtos');
+const containerCesto = document.querySelector('#cesto');
 
-document.addEventListener("DOMContentLoaded", () => {
-    carregarCategorias();
-    carregarProdutos();
-
-    document.getElementById("filter-category").addEventListener("change", atualizarProdutos);
-    document.getElementById("sort-price").addEventListener("change", atualizarProdutos);
-    document.getElementById("search-product").addEventListener("input", atualizarProdutos);
-});
-
-function carregarCategorias() {
-    fetch(`${API_URL}/categories`)
-        .then(res => res.json())
-        .then(data => {
-            const categorias = Array.isArray(data) ? data : (data.categories || []);
-            const select = document.getElementById("filter-category");
-            categorias.forEach(categoria => {
-                const option = document.createElement("option");
-                option.value = categoria;
-                option.textContent = categoria;
-                select.appendChild(option);
-            });
-        })
-        .catch(err => console.error("Erro ao carregar categorias:", err));
+// Garante que a chave 'produtos-selecionados' existe no localStorage
+if (!localStorage.getItem('produtos-selecionados')) {
+  localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
 
-function carregarProdutos() {
-    fetch(`${API_URL}/products`)
-        .then(res => res.json())
-        .then(data => {
-            todosOsProdutos = Array.isArray(data) ? data : (data.products || data.results || []);
-            desenharProdutos(todosOsProdutos);
-        })
-        .catch(err => console.error("Erro ao carregar produtos:", err));
+// B. Funções utilitárias
+
+// Cria o cartão de produto para a lista da loja
+function criarProduto(produto) {
+  const article = document.createElement('article');
+  article.classList.add('produto-card');
+
+  const img = document.createElement('img');
+  img.src = produto.image;
+  img.alt = produto.title;
+
+  const titulo = document.createElement('h2');
+  titulo.textContent = produto.title;
+
+  const preco = document.createElement('p');
+  preco.classList.add('preco');
+  preco.textContent = `${produto.price} €`;
+
+  const botao = document.createElement('button');
+  botao.textContent = '+ Adicionar ao cesto';
+
+  botao.addEventListener('click', () => {
+    const selecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
+    selecionados.push(produto);
+    localStorage.setItem('produtos-selecionados', JSON.stringify(selecionados));
+
+    // Atualiza logo a lista do cesto no ecrã ao adicionar
+    atualizaCesto();
+  });
+
+  article.append(img, titulo, preco, botao);
+  return article;
 }
 
-function atualizarProdutos() {
-    const categoriaSelecionada = document.getElementById("filter-category").value;
-    const ordenacaoSelecionada = document.getElementById("sort-price").value;
-    const termoPesquisa = document.getElementById("search-product").value.toLowerCase();
+// Cria o cartão compacto para cada item dentro do cesto
+function criaProdutoCesto(produto) {
+  const article = document.createElement('article');
+  article.classList.add('cesto-item');
 
-    let resultado = [...todosOsProdutos];
+  const img = document.createElement('img');
+  img.src = produto.image;
+  img.alt = produto.title;
 
-    if (categoriaSelecionada !== "todas") {
-        resultado = resultado.filter(p => p.category === categoriaSelecionada);
+  const titulo = document.createElement('h3');
+  titulo.textContent = produto.title;
+
+  const preco = document.createElement('p');
+  preco.classList.add('preco');
+  preco.textContent = `${produto.price} €`;
+
+  // Botão para remover do cesto
+  const botaoRemover = document.createElement('button');
+  botaoRemover.classList.add('btn-remover');
+  botaoRemover.textContent = '- Remover';
+
+  botaoRemover.addEventListener('click', () => {
+    const selecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
+
+    // Procura o índice do produto na lista (findIndex) e remove-o (splice)
+    const index = selecionados.findIndex(p => p.id === produto.id);
+    if (index !== -1) {
+      selecionados.splice(index, 1);
+      localStorage.setItem('produtos-selecionados', JSON.stringify(selecionados));
+      atualizaCesto();
     }
+  });
 
-    if (termoPesquisa.trim() !== "") {
-        resultado = resultado.filter(p => p.title.toLowerCase().includes(termoPesquisa));
-    }
-
-    if (ordenacaoSelecionada === "crescente") {
-        resultado.sort((a, b) => a.price - b.price);
-    } else if (ordenacaoSelecionada === "decrescente") {
-        resultado.sort((a, b) => b.price - a.price);
-    }
-
-    desenharProdutos(resultado);
+  article.append(img, titulo, preco, botaoRemover);
+  return article;
 }
 
-function desenharProdutos(lista) {
-    const container = document.getElementById("lista-produtos");
-    container.innerHTML = "";
+// C. Event handlers
 
-    if (lista.length === 0) {
-        container.innerHTML = "<p>Nenhum produto encontrado.</p>";
-        return;
-    }
-
-    lista.forEach(produto => {
-        const card = document.createElement("div");
-        card.className = "product-card";
-
-        // Garante que o caminho da imagem inclui o domínio da API se for relativo
-        const imagemSrc = produto.image.startsWith("http")
-            ? produto.image
-            : `https://deisishop.pw.deisi.ulusofona.pt/${produto.image}`;
-
-        card.innerHTML = `
-            <img src="${imagemSrc}" alt="${produto.title}" width="150">
-            <h3>${produto.title}</h3>
-            <p>${produto.price} €</p>
-            <button>Adicionar ao cesto</button>
-        `;
-        container.appendChild(card);
-    });
+// Renderiza a montra de produtos
+function renderizarProdutos(lista) {
+  containerProdutos.innerHTML = '';
+  lista.forEach(produto => {
+    const card = criarProduto(produto);
+    containerProdutos.append(card);
+  });
 }
+
+// Renderiza o cesto de compras com os itens do localStorage e calcula o total
+function atualizaCesto() {
+  containerCesto.innerHTML = '';
+
+  const tituloCesto = document.createElement('h2');
+  tituloCesto.textContent = 'Cesto de Compras';
+  containerCesto.append(tituloCesto);
+
+  const selecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
+
+  if (selecionados.length === 0) {
+    const avisoVazio = document.createElement('p');
+    avisoVazio.textContent = 'O cesto está vazio.';
+    containerCesto.append(avisoVazio);
+    return;
+  }
+
+  // Div para agrupar os artigos do cesto
+  const listaCesto = document.createElement('div');
+  listaCesto.classList.add('cesto-lista');
+
+  let precoTotal = 0;
+
+  selecionados.forEach(produto => {
+    precoTotal += Number(produto.price);
+    const item = criaProdutoCesto(produto);
+    listaCesto.append(item);
+  });
+
+  // Elemento do Preço Total
+  const totalElemento = document.createElement('div');
+  totalElemento.classList.add('cesto-total');
+  totalElemento.innerHTML = `<strong>Custo total:</strong> <span>${precoTotal.toFixed(2)} €</span>`;
+
+  containerCesto.append(listaCesto, totalElemento);
+}
+
+// D. Event Listeners
+
+// E. Inicialização
+renderizarProdutos(produtos);
+atualizaCesto();
