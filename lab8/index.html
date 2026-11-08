@@ -19,38 +19,38 @@
     </header>
 
     <main>
-      <!-- A secção dos produtos fica aqui, dentro do main -->
+      <!-- Barra de controlos: Filtro, Ordenação e Pesquisa -->
+      <div class="filters-container">
+        <label for="filter-category">Filtrar:</label>
+        <select id="filter-category">
+          <option value="todas">Todas as categorias</option>
+        </select>
+
+        <label for="sort-price">Ordenar:</label>
+        <select id="sort-price">
+          <option value="">Ordenar pelo preço</option>
+          <option value="crescente">Preço Crescente</option>
+          <option value="decrescente">Preço Decrescente</option>
+        </select>
+
+        <label for="search-product">Procurar:</label>
+        <input
+          type="text"
+          id="search-product"
+          placeholder="pesquise por produto"
+        />
+      </div>
+
+      <!-- Secção onde os produtos da API vão aparecer -->
       <section id="lista-produtos"></section>
 
-      <!-- A secção do cesto fica reservada para os próximos passos -->
+      <!-- Secção do cesto -->
       <section id="cesto"></section>
-
-      <label for="filter-category">Filtrar por:</label>
-      <select id="filter-category">
-        <option value="todas">Todas as categorias</option>
-        <!-- As restantes opções vão ser carregadas dinamicamente via JS -->
-      </select>
-
-      <label for="sort-price">Ordenar:</label>
-      <select id="sort-price">
-        <option value="">Ordenar pelo preço</option>
-        <option value="crescente">Preço Crescente</option>
-        <option value="decrescente">Preço Decrescente</option>
-      </select>
-
-      <!-- NOVO: Procurar por nome -->
-      <label for="search-product">Procurar:</label>
-      <input
-        type="text"
-        id="search-product"
-        placeholder="pesquise por produto"
-      />
     </main>
 
-    <!-- O rodapé fica mesmo no fim de todo o conteúdo visual -->
     <footer>@2026 Vadym Vitrenko</footer>
 
-    <!-- Os scripts no fim, na ordem exata de execução -->
+    <!-- Apenas o script.js -->
     <script src="script.js"></script>
   </body>
 </html>
