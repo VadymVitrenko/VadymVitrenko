@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Amigos</title>
+  </head>
+  <body>
+    <h1>
+      <a href="https://amigos.pw.deisi.ulusofona.pt/" target="_blank"
+        >API amigos</a
+      >
+    </h1>
+    <ul></ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+
+      fetch("https://amigos.pw.deisi.ulusofona.pt/amigos/")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          data.forEach((amigo) => {
+            const li = document.createElement("li");
+            li.textContent = `${amigo.nome}, ${amigo.idade} anos (Registo com id: ${amigo.id})`;
+            ul.appendChild(li);
+          });
+        })
+        .catch((error) => console.error("Ошибка:", error));
+    </script>
+  </body>
+</html>
