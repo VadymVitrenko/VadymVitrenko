@@ -1,46 +1,68 @@
-// 1. URL da API da loja do DEISI
-const API_URL = "https://deisishop.pw.deisi.ulusofona.pt/products";
+const API_URL = "https://deisishop.pw.deisi.ulusofona.pt";
+let todosOsProdutos = []; // Guarda a lista completa para podermos filtrar
 
-// 2. Quando a página carregar, vamos buscar os produtos à internet
 document.addEventListener("DOMContentLoaded", () => {
-    carregarProdutosDaAPI();
+    carregarCategorias();
+    carregarProdutos();
+
+    // Evento quando o utilizador muda a opção no <select>
+    document.getElementById("filter-category").addEventListener("change", (e) => {
+        filtrarPorCategoria(e.target.value);
+    });
 });
 
-function carregarProdutosDaAPI() {
-    fetch(API_URL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao carregar os produtos: " + response.status);
-            }
-            return response.json();
+// 1. Vai buscar as categorias ao endpoint GET /categories
+function carregarCategorias() {
+    fetch(`${API_URL}/categories`)
+        .then(res => res.json())
+        .then(categorias => {
+            const select = document.getElementById("filter-category");
+            categorias.forEach(categoria => {
+                const option = document.createElement("option");
+                option.value = categoria;
+                option.textContent = categoria;
+                select.appendChild(option);
+            });
         })
-        .then(produtos => {
-            console.log("Produtos recebidos:", produtos);
-            // 3. Chama a função que desenha os produtos no HTML da tua página
-            desenharProdutosNaPagina(produtos);
-        })
-        .catch(error => {
-            console.error("Erro:", error);
-        });
+        .catch(err => console.error("Erro ao carregar categorias:", err));
 }
 
-// 4. Função que cria os cartões dos produtos e os mete no HTML
-function desenharProdutosNaPagina(produtos) {
-    // Procura o elemento onde os produtos vão aparecer (ajusta o seletor se o teu for diferente, ex: ".products-container")
+// 2. Vai buscar todos os produtos ao endpoint GET /products
+function carregarProdutos() {
+    fetch(`${API_URL}/products`)
+        .then(res => res.json())
+        .then(produtos => {
+            todosOsProdutos = produtos; // Guarda a cópia original
+            desenharProdutos(todosOsProdutos);
+        })
+        .catch(err => console.error("Erro ao carregar produtos:", err));
+}
+
+// 3. Filtra a lista de produtos com base na categoria selecionada
+function filtrarPorCategoria(categoriaSelecionada) {
+    if (categoriaSelecionada === "todas") {
+        desenharProdutos(todosOsProdutos);
+    } else {
+        const produtosFiltrados = todosOsProdutos.filter(
+            p => p.category === categoriaSelecionada
+        );
+        desenharProdutos(produtosFiltrados);
+    }
+}
+
+// 4. Desenha os cartões dos produtos no HTML
+function desenharProdutos(lista) {
     const container = document.querySelector(".products-container") || document.body;
+    container.innerHTML = ""; // Limpa os produtos anteriores
 
-    // Se o container tiver placeholders estáticos antigos, limpa-os
-    // (Opcional, dependendo de como fizeste o teu HTML)
-
-    produtos.forEach(produto => {
-        // Podes adaptar este HTML para ficar igual à estrutura que já tens no teu Lab 7
+    lista.forEach(produto => {
         const card = document.createElement("div");
-        card.className = "product-card"; // Nome da classe do teu CSS
+        card.className = "product-card";
         card.innerHTML = `
             <img src="${produto.image}" alt="${produto.title}" width="150">
             <h3>${produto.title}</h3>
             <p>${produto.price} €</p>
-            <button onclick="adicionarAoCesto(${produto.id})">Adicionar ao cesto</button>
+            <button>Adicionar ao cesto</button>
         `;
         container.appendChild(card);
     });
