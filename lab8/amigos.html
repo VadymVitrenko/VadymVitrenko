@@ -25,41 +25,36 @@
   <body>
     <h1>API amigos</h1>
 
-    <!-- 1. GET (Список) -->
     <section>
-      <h2>1. Список друзей (GET)</h2>
-      <button onclick="carregarAmigos()">Обновить список</button>
+      <h2>1. Lista de amigos (GET)</h2>
+      <button onclick="carregarAmigos()">Atualizar lista</button>
       <ul id="lista-amigos"></ul>
     </section>
 
-    <!-- 2. POST (Создание) -->
     <section>
-      <h2>2. Добавить друга (POST)</h2>
-      <input type="text" id="nome" placeholder="Имя" /><br />
-      <input type="number" id="idade" placeholder="Возраст" /><br />
-      <button onclick="criarAmigo()">Создать</button>
+      <h2>2. Adicionar amigo (POST)</h2>
+      <input type="text" id="nome" placeholder="Nome" /><br />
+      <input type="number" id="idade" placeholder="Idade" /><br />
+      <button onclick="criarAmigo()">Criar</button>
     </section>
 
-    <!-- 3. PUT (Изменение) -->
     <section>
-      <h2>3. Обновить друга (PUT)</h2>
-      <input type="number" id="put-id" placeholder="ID друга" /><br />
-      <input type="text" id="put-nome" placeholder="Новое имя" /><br />
-      <input type="number" id="put-idade" placeholder="Новый возраст" /><br />
-      <button onclick="atualizarAmigo()">Обновить</button>
+      <h2>3. Atualizar amigo (PUT)</h2>
+      <input type="number" id="put-id" placeholder="ID" /><br />
+      <input type="text" id="put-nome" placeholder="Novo nome" /><br />
+      <input type="number" id="put-idade" placeholder="Novo idade" /><br />
+      <button onclick="atualizarAmigo()">Atualizar</button>
     </section>
 
-    <!-- 4. DELETE (Удаление) -->
     <section>
-      <h2>4. Удалить друга (DELETE)</h2>
-      <input type="number" id="delete-id" placeholder="ID для удаления" /><br />
-      <button onclick="apagarAmigo()">Удалить</button>
+      <h2>4. Apagar amigo (DELETE)</h2>
+      <input type="number" id="delete-id" placeholder="ID para apagar" /><br />
+      <button onclick="apagarAmigo()">Apagar</button>
     </section>
 
     <script>
       const API_URL = "https://amigos.pw.deisi.ulusofona.pt/amigos";
 
-      // GET: Загрузить список
       function carregarAmigos() {
         fetch(API_URL)
           .then((res) => res.json())
@@ -75,7 +70,6 @@
           .catch((err) => console.error("Erro no GET:", err));
       }
 
-      // POST: Создать
       function criarAmigo() {
         const nome = document.getElementById("nome").value;
         const idade = document.getElementById("idade").value;
@@ -89,7 +83,6 @@
           .catch((err) => console.error("Erro no POST:", err));
       }
 
-      // PUT: Обновить
       function atualizarAmigo() {
         const id = document.getElementById("put-id").value;
         const nome = document.getElementById("put-nome").value;
@@ -104,7 +97,6 @@
           .catch((err) => console.error("Erro no PUT:", err));
       }
 
-      // DELETE: Удалить
       function apagarAmigo() {
         const id = document.getElementById("delete-id").value;
 
@@ -115,7 +107,6 @@
           .catch((err) => console.error("Erro no DELETE:", err));
       }
 
-      // Автоматически загружаем список при открытии
       carregarAmigos();
     </script>
   </body>
