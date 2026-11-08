@@ -72,8 +72,14 @@ function desenharProdutos(lista) {
     lista.forEach(produto => {
         const card = document.createElement("div");
         card.className = "product-card";
+
+        // Garante que o caminho da imagem inclui o domínio da API se for relativo
+        const imagemSrc = produto.image.startsWith("http")
+            ? produto.image
+            : `https://deisishop.pw.deisi.ulusofona.pt/${produto.image}`;
+
         card.innerHTML = `
-            <img src="${produto.image}" alt="${produto.title}" width="150">
+            <img src="${imagemSrc}" alt="${produto.title}" width="150">
             <h3>${produto.title}</h3>
             <p>${produto.price} €</p>
             <button>Adicionar ao cesto</button>
